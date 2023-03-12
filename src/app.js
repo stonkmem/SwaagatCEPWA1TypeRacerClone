@@ -32,7 +32,7 @@ function App(){
         <hr></hr>
         <button onClick={genString}>New sequence!</button>
         <input type="text" id = 'monke'>
-
+            TestTest
         </input>
         
         </>
