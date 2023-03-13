@@ -29,6 +29,7 @@ function App(){
     return (
         <>
         <h3>{string}</h3>
+        <h1>TEST TEST TEST</h1>
         <hr></hr>
         <button onClick={genString}>New sequence!</button>
         <input type="text" id = 'monke'>
