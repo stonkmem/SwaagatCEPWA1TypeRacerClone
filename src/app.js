@@ -97,12 +97,13 @@ export function App(){
       <div className='myonlypurposeistopad'></div>
       <div className='row'>
         <div className='col-sm-3'></div>
-        <ProgressBar className='col-sm-6'>
+        <ProgressBar className='col-sm-6 taller'>
           <ProgressBar variant="success" now={Index*100/WordArr.length} />
           <ProgressBar variant="info" now={100-Index*100/WordArr.length}/>
         </ProgressBar>
         <div className='col-sm-1'></div>
       </div>
+      <div className='thinnerpadding'></div>
       <div className='row'>
         <div className='col-sm-3'></div>
         <h3 className='col-sm-6'>Words typed: {Index}/{WordArr.length}</h3>
