@@ -20,7 +20,19 @@ export function App(){
   }, [WordArr]);
 
   useEffect(() => {  //CHECKER FUNCTION
-    if(Index >= WordArr?.length){
+    if(Index === WordArr?.length){
+      if(typeof(Storage)!=="undefined" && !isNaN(localStorage.best)){
+        localStorage.best = Math.max(localStorage?.best, WPM);
+      }
+      else if(typeof(Storage)!=="undefined"){
+        localStorage.setItem("best", WPM);
+      }
+      if(typeof(Storage)!=="undefined" && !isNaN(sessionStorage.recent)){
+        sessionStorage.recent = WPM;
+      }
+      else if(typeof(Storage)!=="undefined"){
+        sessionStorage.setItem("recent", WPM);
+      }
       genString();
     }
     if(Text?.charAt(Text.length-1) !== " " && Index !== WordArr?.length - 1)return;
@@ -29,7 +41,7 @@ export function App(){
       setWPM(Math.floor(Index/((Date.now()-Time)/60000)));
       setIndex(Index+1);
     }
-  }, [Text, Index, WordArr, string, Time]);
+  }, [Text, Index, WordArr, string, Time, WPM]);
 
   useEffect(() => {
     setWordArr(string.split(" "));
@@ -108,12 +120,32 @@ export function App(){
         <div className='col-sm-3'></div>
         <h3 className='col-sm-6'>Words typed: {Index}/{WordArr.length}</h3>
         <h3 className='col-sm-3'>WPM: {WPM}</h3>
-      </div>
-      </div>
-      <div className='myonlypurposeistopad'></div>
-      </div>
+      </div></div></div>
       <div className="myonlypurposeistopad"></div>
       <div className="myonlypurposeistopad"></div>
+      <div className="black-box">
+        <div className="container">
+          <h3>Your Stats</h3>
+          <table class="table">
+            <thead className="thead-dark">
+              <tr>
+                <th scope='col'>#</th>
+                <th scope='col'>Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Best</th>
+                <th>{localStorage.best}</th>
+              </tr>
+              <tr>
+                <th>Recent</th>
+                <th>{sessionStorage.recent}</th>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       </>
   );
 };
