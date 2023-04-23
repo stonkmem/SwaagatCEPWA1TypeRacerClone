@@ -90,7 +90,7 @@ export function App(){
         <div class="col-sm-1"></div>
         <button class="col-sm-2" onClick={genString}>New passage!</button>
         <div class="col-sm-1"></div>
-        <input class="col-sm-7" autoFocus
+        <input class="col-sm-7" autoFocus placeholder="Type Here!"
           onChange={(Text) => setText(Text.target.value.trimStart())}
           value={Text}/>
       </div>
