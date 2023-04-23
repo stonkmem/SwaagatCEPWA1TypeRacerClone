@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
-import { ProgressBar } from 'react-bootstrap';
+import {ProgressBar} from 'react-bootstrap';
 import corpus from './quotes.json';
 import './style.css';
 export function App(){
-  const [string, setString] = useState('Click the button to begin, and type these sentences as quickly as possible!'); //string is the quote
+  const [string, setString] = useState('Click to begin and type the words as quickly as possible!'); //string is the quote
   const [WordArr, setWordArr] = useState(string.split(" ")); //
   const [Text, setText] = useState("");
   const [Index, setIndex] = useState(0);
@@ -90,7 +90,7 @@ export function App(){
         <div class="col-sm-1"></div>
         <button class="col-sm-2" onClick={genString}>New passage!</button>
         <div class="col-sm-1"></div>
-        <input class="col-sm-7" autoFocus placeholder="Type Here!"
+        <input class="col-sm-7" autoFocus placeholder='Type Here!'
           onChange={(Text) => setText(Text.target.value.trimStart())}
           value={Text}/>
       </div>
@@ -99,7 +99,7 @@ export function App(){
         <div className='col-sm-3'></div>
         <ProgressBar className='col-sm-6 taller'>
           <ProgressBar variant="success" now={Index*100/WordArr.length} />
-          <ProgressBar variant="warning" now={100-Index*100/WordArr.length}/>
+          <ProgressBar variant="info" now={100-Index*100/WordArr.length}/>
         </ProgressBar>
         <div className='col-sm-1'></div>
       </div>
@@ -117,3 +117,4 @@ export function App(){
       </>
   );
 };
+//IT WORKS!!!!!
