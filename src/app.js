@@ -99,7 +99,7 @@ export function App(){
         <div className='col-sm-3'></div>
         <ProgressBar className='col-sm-6 taller'>
           <ProgressBar variant="success" now={Index*100/WordArr.length} />
-          <ProgressBar variant="info" now={100-Index*100/WordArr.length}/>
+          <ProgressBar variant="warning" now={100-Index*100/WordArr.length}/>
         </ProgressBar>
         <div className='col-sm-1'></div>
       </div>
