@@ -3,7 +3,7 @@ import { ProgressBar } from 'react-bootstrap';
 import corpus from './quotes.json';
 import './style.css';
 export function App(){
-  const [string, setString] = useState('Click to begin and type the words as quickly as possible!'); //string is the quote
+  const [string, setString] = useState('Click the button to begin, and type these sentences as quickly as possible!'); //string is the quote
   const [WordArr, setWordArr] = useState(string.split(" ")); //
   const [Text, setText] = useState("");
   const [Index, setIndex] = useState(0);
